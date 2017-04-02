@@ -5,12 +5,19 @@ import org.apache.spark.sql.SparkSession
 /**
   * Created by carlos on 4/1/17.
   */
-class ScalaSparkExample {
+object ScalaSparkExample {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
       .builder
       .appName("Scala Spark Example")
       .getOrCreate()
-    spark
+    val sc = spark.sparkContext
+
+    sc.setLogLevel("WARN")
+
+    sc.parallelize(List("Hello","World!")).
+      collect().
+      foreach(println)
+
   }
 }

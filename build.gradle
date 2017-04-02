@@ -9,6 +9,7 @@
 // Apply the java-library plugin to add support for Java Library
 apply from: "$rootDir/gradle/dependencies.gradle"
 apply plugin: 'java-library'
+apply plugin: 'scala'
 apply plugin: 'idea'
 
 repositories {
@@ -21,9 +22,11 @@ dependencies {
     ])
 
     compileOnly([
+            deps.scala,
             deps.spark,
-            deps.scala
+            deps.sparkSql
     ])
+
     testImplementation 'junit:junit:4.12'
 }
 

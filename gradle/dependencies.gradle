@@ -11,5 +11,6 @@ versions += [
 deps += [
         guava: "com.google.guava:guava:21.0",
         scala: "org.scala-lang:scala-library:$versions.scala.8",
-        spark: "org.apache.spark:spark-core_$versions.scala:$versions.spark"
+        spark: "org.apache.spark:spark-core_$versions.scala:$versions.spark",
+        sparkSql: "org.apache.spark:spark-sql_$versions.scala:$versions.spark"
 ]
