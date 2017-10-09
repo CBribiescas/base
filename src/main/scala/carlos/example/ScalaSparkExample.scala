@@ -7,10 +7,11 @@ import org.apache.spark.sql.SparkSession
   */
 object ScalaSparkExample {
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession
-      .builder
-      .appName("Scala Spark Example")
-      .getOrCreate()
+    val spark = SparkSession.builder().
+      master("local").
+      appName("Scala Spark Example").
+      getOrCreate()
+
     val sc = spark.sparkContext
 
     sc.setLogLevel("WARN")

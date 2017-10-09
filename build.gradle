@@ -16,15 +16,17 @@ repositories {
     jcenter()
 }
 
+version = "1.0.0"
+
 dependencies {
     compile([
+            deps.scala,
+            deps.spark,
+            deps.sparkSql,
             deps.guava
     ])
 
     compileOnly([
-            deps.scala,
-            deps.spark,
-            deps.sparkSql
     ])
 
     testImplementation 'junit:junit:4.12'
